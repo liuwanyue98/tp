@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>吧</title>
+</head>
+<body>
+	<h2>帖子列表（{$result->total()}）</h2>
+	{volist name="result" id="ba"}
+	ID:{$ba.baid}<br>吧标题：{$ba.batitle}<br>
+	<a href=" tiezi.html">查看详情</a>
+	-------------------------<br>
+	{/volist}
+	{$result->render()}
+</body>
+</html>

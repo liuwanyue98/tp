@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>查看用户列表</title>
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+
+<!-- volist标签的name属性就是模板变量的名称，id属性则是定义每次循环输出的变量，
+在volist标签中间使用user.id表示输出当前用户的id属性，
+以此类推下面的内容则依次输出用户的相关属性。 -->
+<h2>用户列表（{$list->total()}）</h2>
+{volist name="list" id="students"}
+ID：{$students.id}<br/>
+名称：{$students.name}<br/>
+性别：{$students.ssex}<br/>
+年龄：{$students.sage}<br/>
+班级：{$students.year.$students.major.$students.subclass}<br/>
+<a href="/user/edit/{$students.id}">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/delete/{$students.id}">删除</a><br>
+------------------------<br/>
+{/volist}
+<h1><a href="add.html">增加学生</a></h2>
+{$list->render()}
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/user/adddo" method="post">
+		<input type="text" name="name" id="name">
+		<input type="text" name="ssex" id="ssex">
+		<input type="text" name="sage" id="sage">
+		<input type="submit" value="put it in!">
+		<select name="classes" id="classes">
+			{volist name="list" id="classes"}
+			<option value="{$classes.id}">{$classes.year.$classes.major.$classes.subclass}</option>
+			{/volist}
+		</select>
+	</form>
+</body>
+</html>

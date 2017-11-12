@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/user/update/{$id}" method="post">
+	<label for="name">姓名</label>
+	<input type="text" name="name" id="name" value="{$name}"><br>
+	<label for="ssex">性别</label>
+	<input type="text" name="ssex" id="ssex" value="{$ssex}"><br>
+	<label for="sage">年龄</label>
+	<input type="text" name="sage" id="sage" value="{$sage}"><br>
+	<select name="classes" id="classes">
+			{volist name="list" id="classes"}
+			<option value="{$classes.id}">{$classes.year.$classes.major.$classes.subclass}</option>
+			{/volist}
+		</select>
+		<input type="submit" value="确认编辑">
+	</form>
+</body>
+</html>

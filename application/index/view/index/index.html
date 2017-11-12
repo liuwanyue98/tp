@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贴吧</title>
+
+</head>
+<body><h1>贴吧首页</h2>
+	<h3>&nbsp;&nbsp;<a href="login/index.html">登陆</a>
+	&nbsp;&nbsp;<a href="registe">注册</a>&nbsp;&nbsp;
+
+</h3><br>
+		{volist name="result" id="ba"}
+	
+	<!-- <p>
+            <label for="baid">吧ID：</label>
+            <input type="text" id="baid" name="baid" value="{$ba.baid}" />
+        </p> -->
+        <p>
+        	<a href="tiezi/baid=$baid">{$ba.batitle}</a>
+            
+        </p>
+        {/volist}
+        <h2><a href="ba/addba">添加吧</a>
+
+       <!--  <a href="ba/editba/{$ba.baid}">编辑吧</a><br></h2> -->
+
+
+</body>
+</html>

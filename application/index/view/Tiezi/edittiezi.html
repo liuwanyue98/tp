@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>修改学生信息</title>
+</head>
+<body>
+<form method="post" action="/tiezi/editt{$single.tieid}">
+    <fieldset>
+        <legend>帖子内容</legend>
+        <p>
+            <label for="tietitle">标题：</label>
+            <input type="text" id="tietitle" name="tietitle" value="{$single.tietitle}" />
+        </p>
+        <p>
+            <label for="tieconcent">内容：</label>
+            <input type="text" id="tieconcent" name="tieconcent" value="{$single.tieconcent}" />
+        </p>
+        
+    <button type="submit">确定</button>
+    </fieldset>
+</form>
+</body>
+</html>
