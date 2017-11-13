@@ -3,16 +3,13 @@
 <title>帖子</title>
 </head>
 <body>
-	<h2>内容列表（{$result->total()}）</h2>
 	{volist name="result" id="tiezi"}
 	
-	帖子标题：{$tiezi.tietitle}&nbsp&nbsp帖子内容：{$tiezi.tieconcent}<br>
-	日期：{$tiezi.tiedate}<br>
-	<a href="/ptie/addptie">回复</a><br>
+	帖子标题：<a href="/tieconcent/{$tiezi.tieid}">{$tiezi.tietitle}</a><br>
+	*********************<br>
 	
 	{/volist}
 
 	<a href="/lll/addtiezi">添加帖子</a><br>
-	{$result->render()}
 </body>
 </html>

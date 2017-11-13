@@ -30,11 +30,15 @@ class baController extends Controller
 		$ba->batitle = $request->post('batitle');
 		
 		if ($ba->save()) {
-			return '吧[ ' . $ba ->batitle. ':' . $ba->baid . ' ]新增成功';
+			echo '吧' . $ba ->batitle. ':' . ' 新增成功';
+			echo '<a href="/zy">返回上一页</a>';
+
 		} else {
 			return $ba->getError();
 		}
 	}
+
+
 	
 // 	public function editba($baid)
 // 	{
@@ -51,4 +55,6 @@ class baController extends Controller
 // 		$ba->save();
 // 		return '更新吧成功';
 // 	}
+	
+
 }

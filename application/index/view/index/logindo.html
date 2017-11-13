@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主页</title>
+</head>
+<body>
+	您以登陆成功！
+	用户名:{$Request.session.username}<br>
+{if condition="$data.guanli==1"}
+您是管理员<a href="zy">进入主页</a>
+{else/}
+您是普通用户<a href="zhuye">进入主页</a>
+{/if}
+	<a href="logout">注销</a>
+
+</html>

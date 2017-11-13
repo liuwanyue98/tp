@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>帖子内容</title>
+</head>
+<body>
+	<h2>帖子内容</h2>
+	{volist name="data" id="tiezi"}
+	帖子标题：{$tiezi.tietitle}<br><br>
+	<br>帖子内容：{$tiezi.tieconcent}<br><br>
+
+
+	日期：{$tiezi.tiedate}<br>
+	
+	-------------------------<br>
+	{/volist}
+
+</body>
+</html>

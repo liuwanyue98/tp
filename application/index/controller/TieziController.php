@@ -12,13 +12,38 @@ use app\index\model\User;
 class TieziController extends Controller
 {
 	
-	public function index()
+	public function index($id)
 	{
 		// $data = Classes::all();
 		$data = Tiezi::paginate(3);
+		$data = Tiezi::where('baid',$id)
+			->select();
+
 		$this->assign('result', $data);
 		return $this->fetch();
 	}
+
+	public function tiez($id)
+	{
+		// $data = Classes::all();
+		$data = Tiezi::paginate(3);
+		$data = Tiezi::where('baid',$id)
+			->select();
+
+		$this->assign('data', $data);
+		return $this->fetch();
+	}
+	// public function tz($id)
+	// {
+	// 	// $data = Classes::all();
+	// 	$data = Tiezi::paginate(3);
+	// 	$data = Tiezi::where('baid',$id)
+	// 		->select();
+
+	// 	$this->assign('result', $data);
+	// 	return $this->fetch();
+	// }
+
 	public function addtiezi()
 	{
 		$all = ba::all();
@@ -30,31 +55,43 @@ class TieziController extends Controller
 	{
 		$tiezi = new tiezi;
 		$tiezi->tietitle = $request->post('tietitle');
-		$tiezi->ptie = $request->post('ptie');
-		$tiezi->quotetie = $request->post('quotetie');
+		// $tiezi->ptie = $request->post('ptie');
+		// $tiezi->quotetie = $request->post('quotetie');
 		$tiezi->tiedate = $request->post('tiedate');
 		$tiezi->tieconcent = $request->post('tieconcent');
 		$tiezi->baid = $request->post('baid');
 		if ($tiezi->save()) {
-			return '帖子[ ' . $tiezi->tietitle. $tiezi->tieconcent.$tiezi->tieptie. $tiezi->quotetie.$tiezi->tiedate.':' . $tiezi->tieid . ' ]新增成功';
+			echo '帖子 ' . ':' .$tiezi->tietitle.   ' 新增成功';
+           echo '<br><br>';
+			echo '<a href="/tie/1">返回上一页</a><br>';
 		} else {
-			return $tiezi->getError();
+			echo $tiezi->getError();
+			echo '<a href="/tie/1">返回上一页</a><br>';
 		}
 	}
 
-	public function reply(Request $request)
-	{
-		$tiezi = new tiezi;
-		$tiezi->tieconcent = $request->post('tieconcent');
-		$tiezi->ptie = $request->post('ptie');
-		$tiezi->quotetie = $request->post('quotetie');
-		$tiezi->tiedate = $request-> data('Y-m-d H:i:s');
-		$tiezi->baid = $request->post('baid');
-		if ($ptie->save()) {
-			return '帖子[ ' . $tiezi->tietitle. $tiezi->tieconcent.$tiezi->tieptie. $tiezi->quotetie.$tiezi->tiedate.':' . $tiezi->tieid . ' ]新增成功';
-		} else {
-			return $tiezi->getError();
-		}
+// public function tz($id)
+// 	{	$data = Tiezi::where('baid',$id)
+// 			->select();
+// 		$data = tiezi::all();
+		
+// 		$this->assign('data', $data);
+// 		return $this->fetch();
+// 	}
+
+	// public function reply(Request $request)
+	// {
+	// 	$tiezi = new tiezi;
+	// 	$tiezi->tieconcent = $request->post('tieconcent');
+	// 	$tiezi->ptie = $request->post('ptie');
+	// 	$tiezi->quotetie = $request->post('quotetie');
+	// 	$tiezi->tiedate = $request-> data('Y-m-d H:i:s');
+	// 	$tiezi->baid = $request->post('baid');
+	// 	if ($ptie->save()) {
+	// 		return '帖子[ ' . $tiezi->tietitle. $tiezi->tieconcent.$tiezi->tieptie. $tiezi->quotetie.$tiezi->tiedate.':' . $tiezi->tieid . ' ]新增成功';
+	// 	} else {
+	// 		return $tiezi->getError();
+	// 	}
 	}
 
 
@@ -82,7 +119,7 @@ class TieziController extends Controller
 	// 	$tiezi->save();
 	// 	return '更新帖子成功';
 	// }
-}
+
 // 	public function deletec($id)
 // 	{
 // 		$classes = Classes::get($id);

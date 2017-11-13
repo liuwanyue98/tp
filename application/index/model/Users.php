@@ -1,10 +1,9 @@
 <?php
 namespace app\index\model;
-
 use think\Model;
-
-class registe extends Model
+class users extends Model
 {
-	// birthday读取器
 	
-}
+	}
+
+

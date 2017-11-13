@@ -24,14 +24,28 @@ return [
     'tiezi/edittiezi/:tieid' => 'index/tiezi/edittiezi',
     'tiezi/editt/:tieid' => 'index/tiezi/editt',
 
-    'ba' => 'index/ba/index',
+     'ba/:id'=>'index/index/ba',
     'ba/addb' => 'index/ba/addb',
     'ba/addba' => 'index/ba/addba',
     'ba/editb/:baid' => 'index/ba/editb',
     'ba/editba/:baid' => 'index/ba/editba',
 
-    'login' => 'index/login/index',
-   
+    'login' => 'index/index/login',
+    'logindo'=>'index/index/logindo',
+
+    'logout' => 'index/index/logout',
+
+    'regist' => 'index/index/regist',
+    'registdo' => 'index/index/registdo',
+    'zy'=>'index/index/zy',
+    'zhuye'=>'index/index/zhuye',
+    'tz'=>'index/index/tz',
+    'tieconcent/:id'=>'index/index/tiecontent',
+    'tconcent/:id'=>'index/index/tconcent',
+
+    'tie/:id'=>'index/tiezi/index',
+    'tiezi/:id'=>'index/tiezi/index',
+    'tiez/:id'=>'index/tiezi/tiez',
 
     // 'course' => 'index/course/index',
     // 'courses/deleteco/:id' => 'index/courses/deleteco',
